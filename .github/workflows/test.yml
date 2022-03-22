@@ -1,0 +1,15 @@
+name: Caller
+
+on: [ workflow_dispatch ]
+
+jobs:
+  call-workflow-passing-data-foo:
+    uses: .github/workflows/callee.yml
+    with:
+      project: foo
+
+  call-workflow-passing-data-bar:
+    uses: .github/workflows
+    if: false
+    with:
+      project: bar
